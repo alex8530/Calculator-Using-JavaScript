@@ -58,7 +58,7 @@ h1 {
     height: 100%;
     width: 100%; 
     background-color: transparent;
-    border: 0px solid;
+    border: 0px solid;  overflow: hidden; 
 }
 
 #input-typ{
@@ -69,7 +69,7 @@ h1 {
     width: 100%; 
     background-color: transparent;
     border: 0px solid;
-    
+     overflow: hidden; 
 
 }
 
@@ -93,7 +93,11 @@ h1 {
     background:#DDD;
     box-shadow: 0 0 5px -1px rgba(0,0,0,0.2);
     cursor:pointer;
-    vertical-align:middle;
- 
+    vertical-align:middle;	transition: all 0.2s ease;
+    transition: transform .9s; /* Animation */
 }
- 
+.numbers div:hover {
+	background: blue;
+    transform: scale(1.5);
+	color: white;
+}
