@@ -13,26 +13,28 @@ for (var i = 0; i < keys.length; i++) {
 function getResult(valuePressedDigit){
     
  
-    //this valuePressedDigit will come when i press into the calculater , for example 0 ,1 ,2 ...
-    var inputTyping = document.querySelector('#input-typ') ; 
+        //this valuePressedDigit will come when i press into the calculater , for example 0 ,1 ,2 ...
+        var inputTyping = document.querySelector('#input-typ') ; 
+        var inputResult = document.querySelector('#input-result') ; 
 
 
      	// If clear key is pressed , clear !
 		if(valuePressedDigit == 'C') {
-			inputTyping.innerHTML = '';
+			inputTyping.innerHTML = ''; 
+			inputResult.innerHTML = ''; 
          }
          
          // If eval key is pressed, calculate and display the result
          else if(valuePressedDigit == '=') {
-             var equation = inputTyping.innerHTML;
-             var lastChar = equation[equation.length - 1];
+             var data = inputTyping.innerHTML;
+             var lastChar = data[data.length - 1];
               
              // Final thing left to do is checking the last character of the equation. If it's an operator or a decimal, remove it
              if(operators.indexOf(lastChar) > -1 || lastChar == '.')
-                 equation = equation.replace(/.$/, '');
+             data = data.replace(/.$/, '');
              
-             if(equation) 
-                 inputTyping.innerHTML = eval(equation);
+             if(data) 
+                  inputResult.innerHTML = eval(data);
           }	
           
           else if(operators.indexOf(valuePressedDigit) > -1) {
@@ -40,8 +42,7 @@ function getResult(valuePressedDigit){
 			// Get the last character 
 			var lastChar = inputTyping.innerHTML[inputTyping.innerHTML.length - 1];
 			
-			
-			// Allow minus if the string is empty
+			 
 			 if( inputTyping.innerHTML == '' && valuePressedDigit == '-')  
               inputTyping.innerHTML += valuePressedDigit;
  
