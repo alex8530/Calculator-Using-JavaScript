@@ -44,11 +44,12 @@ function getResultWhenEqual(){
     data = data.replace(/.$/, '');
     
     if(data) 
-         inputResult.innerHTML = eval(data);
+        
+         inputResult.innerHTML =Math.round(eval(data) * 100) / 100;
 }
   
             
-function getResultWhenOperator(valuePressed ){
+function getResultWhenOperator(valuePressed){
     //check if key= operator
     if( inputTyping.innerHTML == '' && valuePressed == '-')  
     inputTyping.innerHTML += valuePressed;

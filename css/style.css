@@ -101,3 +101,10 @@ h1 {
     transform: scale(1.5);
 	color: white;
 }
+
+
+#clear{
+	background: red;
+    color:#fff;
+
+}
