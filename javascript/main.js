@@ -63,7 +63,7 @@ function getResultWhenEqual(){
     if(data) 
         
          inputResult.innerHTML =Math.round(eval(data) * 100) / 100;
-}
+    }
   
             
 function getResultWhenOperator(valuePressed){
