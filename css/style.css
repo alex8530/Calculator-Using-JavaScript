@@ -108,3 +108,7 @@ h1 {
     color:#fff;
 
 }
+
+.error{
+    display: none;
+}

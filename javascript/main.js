@@ -18,6 +18,7 @@ for (let i = 0; i < keys.length; i++) {
             case 'C': 
                 inputTyping.innerHTML = ''; 
                 inputResult.innerHTML = '';
+                removeError();
                 break;
             case '=':
                 getResultWhenEqual();
@@ -38,10 +39,20 @@ for (let i = 0; i < keys.length; i++) {
 function getResultWhenEqual(){
     let data = inputTyping.innerHTML;
     let lastChar = data[data.length - 1];
-     
-    // If last character an operator or a decimal, remove it
+    console.log(data);
+     //Pressing '=' before entering all of the numbers or an operator should show error message.
+    if(inputTyping.innerHTML.length==0 ||inputTyping.innerHTML==' '){
+         //thats mean is empty
+         showError();
+        return;
+     }else{
+        removeError();
+
+    }
+     // If last character an operator or a decimal, remove it
     if(operators.indexOf(lastChar) > -1 || lastChar == '.')
     data = data.replace(/.$/, '');
+
     
     if(data) 
         
@@ -63,3 +74,11 @@ function getResultWhenOperator(valuePressed){
        inputTyping.innerHTML = inputTyping.innerHTML.replace(/.$/, valuePressed);
   }
 }}
+function showError(){
+    let error = document.querySelector('.error');
+    error.style.cssText="color: red;display: block;";
+}
+function removeError(){
+    let error = document.querySelector('.error');
+    error.style.cssText="color: red;display: none;";
+}
