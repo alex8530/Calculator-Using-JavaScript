@@ -1,6 +1,12 @@
 //get all digit with .
 const keys  = document.querySelectorAll('.numbers .key');
-const operators = ['+', '-', '*', '/'];
+const operators=[];
+const ArrayDivOp  = document.querySelectorAll('.numbers .op');
+ Array.from(ArrayDivOp).forEach(function(el) {
+    operators.push(el.innerHTML);
+  });;
+  
+
 const inputTyping = document.querySelector('#input-typ') ; 
 const inputResult = document.querySelector('#input-result') ; 
 
